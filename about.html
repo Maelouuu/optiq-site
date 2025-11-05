@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AFDEC – A propos</title>
+  <meta name="description" content="AFDEC : laboratoire indépendant de recherche appliquée." />
+
+  <!-- Tailwind (déjà utilisé) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Typo propre et lisible (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/app.js"></script>
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+
+<body class="page-about text-gray-800 bg-white">
+
+  <!-- Header overlay sur le hero -->
+  <header class="header-hero">
+    <div class="container flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <!-- Logo agrandi x2.5 et un peu décalé à droite (géré via CSS .page-about .hero-logo) -->
+        <img src="assets/28.png" alt="AFDEC" class="hero-logo w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+        <a class="nav-hero" href="index.html">Accueil</a>
+        <a class="nav-hero" href="about.html">A propos</a>
+        <a class="nav-hero" href="domaines.html">Domaines</a>
+        <a class="nav-hero" href="faq.html">FAQ</a>
+        <a class="btn-cta" href="contact.html">Contact</a>
+      </nav>
+
+      <button class="md:hidden p-2" data-menu-toggle aria-label="Menu">
+        <img src="assets/1.png" alt="menu" class="h-6 w-6 invert" />
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav class="mobile-menu" data-menu>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">A propos</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn-cta w-fit" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO — image 33.png, titre centré vers le bas -->
+  <section class="relative overflow-hidden hero hero--about">
+    <div class="parallax-wrap">
+      <img src="assets/33.png" alt="Bureau" class="parallax-media" data-parallax data-speed="0.25" />
+    </div>
+    <div class="hero-scrim"></div>
+
+    <div class="absolute inset-0 flex items-end">
+      <div class="container px-4 pb-10">
+        <h1 class="hero-title text-white text-4xl md:text-6xl font-semibold text-center drop-shadow">
+          A propos
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — resserrée au centre + liseré bleu affiné -->
+  <section class="py-16">
+    <div class="wrap-narrow px-4">
+      <p class="lead-in" data-animate="up">Notre parcours</p>
+
+      <div class="grid md:grid-cols-[1.05fr,0.95fr] gap-10 md:gap-14 mt-4 items-start">
+        <div>
+          <h2 class="section-title">Une histoire qui commence par un simple constat</h2>
+
+          <div class="prose-lg text-gray-700 mt-5 leading-relaxed">
+            <p>Personne ne sais réellement définir la compétence. La transposition de la notion de "skills" crée de la confusion. Il existe de nombreux travaux de chercheurs, des analyses, des essais de standardisation, mais peu se confrontent à la réalité quotidienne de terrain, du langage naturel, de la capacité des organisations à créer de la valeur mais à la difficulté de la modéliser. Cela a donné la naissance à l'idée d'aller vivre au coeur des organisations, de s'inscrire dans la durée, de comparer les bonnes pratiques, de les confronter à différentes cultures et de créer des modèles à repartager.</p>
+          </div>
+        </div>
+
+        <figure class="rounded-xl overflow-hidden">
+          <img src="assets/34.png" alt="Signature / réflexion" class="w-full h-auto object-cover" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — grand bandereau gris full-bleed, sans arrondis, image 36.png à gauche -->
+  <section class="strip">
+    <div class="wrap-narrow about-duo">
+      <figure>
+        <img src="assets/36.png" alt="Marketing office">
+      </figure>
+
+      <div class="prose-block">
+        <h2>Qui sommes-nous ?</h2>
+        <p>
+          AFDEC est un laboratoire indépendant de recherche appliquée fondé en 1998. Depuis plus de 25 ans, nous
+          explorons, modélisons et diffusons des approches innovantes en matière de développement des compétences,
+          de transformation organisationnelle et de valorisation du capital humain.
+        </p>
+
+        <h2>Un fonctionnement agile et partenarial</h2>
+        <p>
+          L’AFDEC est une association de loi 1901 à but non lucratif. Elle ne dispose d’aucune structure salariale
+          permanente (en dehors des gestionnaires de projets). Ses travaux sont menés en collaboration avec des
+          partenaires variés : entreprises, institutions publiques, universités, réseaux professionnels, consultants
+          indépendants.
+        </p>
+        <p>
+          Ce modèle d’organisation en mode communauté de travail favorise la souplesse, la rapidité de mise en
+          œuvre, et la proximité avec le terrain. Il permet également de concentrer les moyens sur la qualité
+          méthodologique et l’impact opérationnel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 4 — bande stats full-bleed sur 35.png + filtre noir + textes -->
+  <section class="stats-strip">
+    <div class="wrap-wide px-6 py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-[1]">
+      <div class="text-center">
+        <div class="stat-number">27</div>
+        <div class="stat-label">ans d'expérience</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-number">30</div>
+        <div class="stat-label">pays comparés</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-number">250</div>
+        <div class="stat-label">organisations analysées</div>
+      </div>
+      <div class="text-center">
+        <div class="stat-number">100 %</div>
+        <div class="stat-label">de satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — titre + texte recentrés et resserrés -->
+  <section class="py-16">
+    <div class="wrap-narrow px-4">
+      <p class="lead-in" data-animate="up">25 ans d’expérimentations et de modélisations</p>
+      <h2 class="section-title mt-3">Les grandes étapes</h2>
+
+      <div class="prose-lg text-gray-700 mt-6 leading-relaxed">
+        <p>Depuis sa création, l’AFDEC a structuré ses travaux autour de grandes étapes :</p>
+
+        <ul class="list-disc pl-6 mt-3 space-y-2">
+          <li><strong>1998</strong> : Création de l’AFDEC pour promouvoir la reconnaissance du capital humain par la preuve d’usage.</li>
+          <li><strong>2000–2005</strong> : Développement de référentiels d’activités dans le cadre de formations professionnelles et d’universités d’entreprise. Publication de Capital Humain mode d'emploi pour les PMI</li>
+          <li><strong>2005–2010</strong> : Première formalisation du modèle OPTIQ© et application d'un modèle d'entreprise apprenante</li>
+          <li><strong>2011–2015</strong> : Premières expérimentations internationale (USA, JAPON) sur des modèles d’organisation linéaire et en "cross-management"</li>
+          <li><strong>2016–2020</strong> : Structuration de la méthode MapOPTIQ©, testée dans plus de 200 organisations, avec des résultats tangibles sur les performances.</li>
+          <li><strong>2021 - 2023</strong> : Déploiement de projets autour de l’apprentissage hybride, des tiers lieux, de l’IA en lien avec les besoins en compétences des organisations.</li>
+          <li><strong>2020 - 2023</strong> : Travaux sur les  habiletés socio cognitives </li>
+          <li><strong>2024</strong> - mise en œuvre de processus ouverts de reconnaissance dans des secteurs diversifiés.</li>
+          <li><strong>Depuis près de 30 ans</strong> : Nos travaux sont portés à la normalisation pour contribuer aux standards nationaux et internationaux.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Mega-footer bleu ===== -->
+  <footer class="mega-footer">
+    <div class="container px-4">
+      <!-- Ligne 1 : Titre + CTA -->
+      <div class="mega-top">
+        <h3>Envie d'innover, de Reconnaître,<br/>d'être reconnu&nbsp;?</h3>
+
+        <div class="mega-actions">
+          <a href="contact.html" class="cta-outline cta-white">Faisons le</a>
+
+          <!-- Réseaux -->
+          <nav class="mega-social" aria-label="AFDEC sur les réseaux">
+            <a
+              href="https://fr.linkedin.com/in/hubertgrandjean"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn – Hubert Grandjean"
+              title="LinkedIn – Hubert Grandjean"
+            >
+              <!-- Icône LinkedIn blanche, en SVG inline -->
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M20.45 3H3.55A1.55 1.55 0 0 0 2 4.55v16.9C2 22.4 2.6 23 3.55 23h16.9A1.55 1.55 0 0 0 22 21.45V4.55A1.55 1.55 0 0 0 20.45 3Zm-11 16H6.1V10h3.35v9Zm-1.68-10.3a1.94 1.94 0 1 1 0-3.88 1.94 1.94 0 0 1 0 3.88ZM21 19h-3.34v-4.73c0-1.13-.02-2.6-1.58-2.6-1.58 0-1.82 1.23-1.82 2.52V19h-3.33V10h3.2v1.23h.05c.45-.86 1.56-1.76 3.2-1.76 3.42 0 4.06 2.25 4.06 5.17V19Z"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+
+      <hr class="mega-sep"/>
+
+      <!-- Ligne 2 : 3 colonnes -->
+      <div class="mega-grid">
+        <!-- Col 1 : logo + baseline -->
+        <div>
+          <img src="assets/28.png" alt="AFDEC" class="mega-logo" />
+          <p class="mega-baseline">
+            L'innovation au service des<br/>
+            compétences et des performances des<br/>
+            organisations
+          </p>
+        </div>
+
+        <!-- Col 2 : Organisation -->
+        <div>
+          <p class="mega-title">Organisation</p>
+          <nav class="mega-links">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">A propos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </nav>
+        </div>
+
+        <!-- Col 3 : Domaines -->
+        <div>
+          <p class="mega-title">Domaines</p>
+          <nav class="mega-links">
+            <a href="methode-optiq.html">Méthode OPTIQ(c)</a>
+            <a href="capital-humain.html">Capital Humain et Immatériel</a>
+            <a href="fonction-reconnaissance.html">Processus ouverts de reconnaissance</a>
+            <a href="innovation-pedagogique.html">Innovation pédagogique</a>
+            <a href="management-innovant.html">Nouvelles pratiques managériales</a>
+            <a href="organisation-apprenante.html">Organisation Apprenante</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

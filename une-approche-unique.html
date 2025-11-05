@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Une approche unique – AFDEC</title>
+  <meta name="description" content="Une approche unique : recherche appliquée, expérimentation et preuves par l’usage." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="assets/app.js"></script>
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body class="text-gray-800 bg-white">
+
+  <!-- Header overlay -->
+  <header class="header-hero">
+    <div class="container flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/17.png" alt="AFDEC" class="hero-logo h-14 md:h-16 w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+        <a class="nav-hero" href="index.html">Accueil</a>
+        <a class="nav-hero" href="about.html">A propos</a>
+        <a class="nav-hero" href="domaines.html">Domaines</a>
+        <a class="nav-hero" href="faq.html">FAQ</a>
+        <a class="btn-cta" href="contact.html">Contact</a>
+      </nav>
+
+      <button class="md:hidden p-2" data-menu-toggle aria-label="Menu">
+        <img src="assets/1.png" alt="menu" class="h-6 w-6 invert" />
+      </button>
+    </div>
+
+    <nav class="mobile-menu" data-menu>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">A propos</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn-cta w-fit" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="parallax-wrap">
+      <!-- Image d’intro dédiée à la page -->
+      <img src="assets/14.png" alt="Réunion de travail" class="parallax-media" data-parallax data-speed="0.25" />
+    </div>
+    <div class="hero-scrim"></div>
+
+    <div class="absolute inset-0 flex items-center">
+      <div class="container px-4">
+        <div class="hero-copy max-w-4xl" data-animate="fade">
+          <h1 class="text-white text-4xl md:text-6xl font-semibold leading-tight drop-shadow">
+            Une approche unique
+          </h1>
+          <p class="text-white/90 mt-4 text-lg md:text-xl drop-shadow">
+            Ni cabinet de conseil, ni laboratoire académique : une place à part dans l’écosystème de la
+            transformation des compétences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corps de page : Sidebar collante + article -->
+  <main class="py-16">
+    <div class="container px-4 grid grid-cols-1 lg:grid-cols-[320px,1fr] gap-10">
+      <!-- Aside sticky -->
+      <aside class="sticky-aside" data-animate="up">
+        <div class="sticky-aside__box">
+          <h3 class="sticky-aside__title">Points clés</h3>
+          <ul class="sticky-aside__list">
+            <li>Co-construction</li>
+            <li>Outils et standards</li>
+            <li>Reconnaissance Internationale</li>
+          </ul>
+
+          <h3 class="sticky-aside__title mt-8">Orientations</h3>
+          <ul class="sticky-aside__list">
+            <li>Performances</li>
+            <li>Capital Humain</li>
+            <li>Valorisation</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Article -->
+      <article class="prose-block" data-animate="fade">
+        <h2>Une recherche orientée vers l’action</h2>
+        <p>
+          La recherche appliquée portée par l’AFDEC s’appuie sur une conviction forte :
+          les modèles pertinents ne peuvent émerger que lorsqu’ils sont confrontés à la réalité.
+          Notre approche vise à produire des méthodes qui soient à la fois rigoureuses,
+          reproductibles, et utiles pour les acteurs de terrain.
+        </p>
+
+        <h2>Une démarche fondée sur l’expérimentation</h2>
+        <p>
+          Nos travaux s’ancrent dans des situations réelles, avec des acteurs réels, sur des
+          problématiques concrètes. Chaque méthode développée fait l’objet de plusieurs cycles
+          d’expérimentation, d’ajustement, de capitalisation collective, avant de devenir un
+          cadre transférable. Cette logique de recherche-action permet de :
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Réduire l’écart entre théorie et mise en oeuvre opérationnelle,</li>
+          <li>Intégrer les contraintes spécifiques des organisations (temps, moyens, cultures internes),</li>
+          <li>Favoriser l’appropriation des modèles par les équipes concernées.</li>
+        </ul>
+
+        <h2>Une logique de preuve par l’usage</h2>
+        <p>
+          Nous considérons qu’une méthode n’a de valeur que si elle est mobilisable, comprise,
+          et améliore effectivement les pratiques. C’est pourquoi chaque projet mené par l’AFDEC
+          doit répondre à des critères exigeants : lisibilité, simplicité d’appropriation, utilité
+          pour les acteurs, capacité à être transmise.
+        </p>
+
+        <h2>Faire évoluer les systèmes par la preuve</h2>
+        <p>
+          Les travaux de l’AFDEC s’inscrive dans la durée, il sont régulièrement réinterrogés tant
+          auprès des organisations déjà investies dans ces nouveaux modèles qu’à travers l’expérimentation
+          dans de nouveaux environnement. Ils font donc l’objet d’une amélioration continue.
+        </p>
+        <p>
+          Notre ambition est de faire évoluer les référentiels, les pratiques pédagogiques,
+          les logiques managériales, en s’appuyant sur des résultats réels. Cette démarche alimente
+          nos contributions aux travaux normatifs, mais aussi nos coopérations avec les territoires,
+          les secteurs professionnels, et les organismes de formation.
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <!-- Bandeau bleu final (identique Accueil) -->
+  <section class="belt-blue mt-8">
+    <div class="container px-4 py-14 md:py-16 text-white">
+      <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
+        <h2 class="text-3xl md:text-4xl font-semibold leading-snug">
+          Envie d'innover, de Reconnaître,<br/>d'être reconnu ?
+        </h2>
+        <a href="contact.html" class="btn-cta btn-cta--light">Faisons-le</a>
+      </div>
+
+      <div class="h-px bg-white/30 my-8"></div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <img src="assets/17.png" alt="AFDEC" class="h-14 w-auto mb-4 opacity-90" />
+          <p class="max-w-sm text-white/90">
+            L'innovation au service des compétences et des performances des organisations
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold mb-2">Organisation</p>
+          <nav class="flex flex-col gap-1 text-white/90">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">A propos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="font-semibold mb-2">Domaines</p>
+          <nav class="flex flex-col gap-1 text-white/90">
+            <a href="methode-optiq.html">Méthode OPTIQ©</a>
+            <a href="capital-humain.html">Capital Humain et Immatériel</a>
+            <a href="reconnaissance.html">Processus ouverts de reconnaissance</a>
+            <a href="innovation-pedagogique.html">Innovation pédagogique</a>
+            <a href="management-innovant.html">Nouvelles pratiques managériales</a>
+            <a href="organisation-apprenante.html">Organisation Apprenante</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

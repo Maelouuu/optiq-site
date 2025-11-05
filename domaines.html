@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AFDEC – Domaines</title>
+  <meta name="description" content="Domaines d’intervention de l’AFDEC." />
+
+  <!-- Tailwind (déjà utilisé) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Typo Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles & scripts du site (mêmes chemins que about.html) -->
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/app.js"></script>
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+
+<body class="page-domaines text-gray-800 bg-white">
+
+  <!-- ===== Header overlay (identique à about.html) ===== -->
+  <header class="header-hero">
+    <div class="container flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <!-- Logo géré par CSS (.page-domaines hérite du rendu hero) -->
+        <img src="assets/17.png" alt="AFDEC" class="hero-logo w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+        <a class="nav-hero" href="index.html">Accueil</a>
+        <a class="nav-hero" href="about.html">A propos</a>
+        <a class="nav-hero" href="domaines.html">Domaines</a>
+        <a class="nav-hero" href="faq.html">FAQ</a>
+        <a class="btn-cta" href="contact.html">Contact</a>
+      </nav>
+
+      <button class="md:hidden p-2" data-menu-toggle aria-label="Menu">
+        <img src="assets/1.png" alt="menu" class="h-6 w-6 invert" />
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav class="mobile-menu" data-menu>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">A propos</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn-cta w-fit" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO Domaines — image de présentation + titre centré bas ===== -->
+  <section class="relative overflow-hidden hero hero--domaines">
+    <div class="parallax-wrap">
+      <img src="assets/54.png" alt="Domaines" class="parallax-media" data-parallax data-speed="0.25" />
+    </div>
+    <div class="hero-scrim"></div>
+
+    <div class="absolute inset-0 flex items-end">
+      <div class="container px-4 pb-10">
+        <h1 class="hero-title text-white text-4xl md:text-6xl font-semibold text-center drop-shadow">
+          Domaines d’intervention
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2 — Exploration + grille 3×2 ===== -->
+  <section class="py-16">
+    <div class="wrap-narrow px-4">
+      <p class="lead-in" data-animate="up">Exploration</p>
+      <h2 class="section-title mt-3">A la recherche des modèles performants</h2>
+
+      <!-- Grille 3 colonnes desktop / 2 tablette / 1 mobile (gérée par CSS assets/style.css) -->
+      <div class="domain-grid mt-8">
+        <!-- 1. Méthode OPTIQ© -->
+        <article class="domain-card">
+          <figure class="domain-figure">
+            <img src="assets/42.png" alt="Méthode OPTIQ©" />
+          </figure>
+          <h3 class="domain-title">Méthode OPTIQ©</h3>
+          <p class="domain-text">
+            Cartographier l’organisation telle qu’elle est pour agir sur les compétences,
+            les flux, les rôles et dessiner un futur partagé par tous.
+          </p>
+          <a class="btn-primary domain-more" href="optiq.html">En savoir plus</a>
+        </article>
+
+        <!-- 2. Capital Humain et immatériel -->
+        <article class="domain-card">
+          <figure class="domain-figure">
+            <img src="assets/41.png" alt="Capital Humain et immatériel" />
+          </figure>
+          <h3 class="domain-title">Capital Humain et immatériel</h3>
+          <p class="domain-text">
+            Si le capital humain est une richesse propre à l'individu, il appartient à l'organisation
+            de le protéger, le développer et le rendre lisible pour donner une valeur économique
+            à la performance collective.
+          </p>
+          <a class="btn-primary domain-more" href="capital-humain.html">En savoir plus</a>
+        </article>
+
+        <!-- 3. Processus ouverts de reconnaissance -->
+        <article class="domain-card">
+          <figure class="domain-figure">
+            <img src="assets/40.png" alt="Processus ouverts de reconnaissance" />
+          </figure>
+          <h3 class="domain-title">Processus ouverts de reconnaissance</h3>
+          <p class="domain-text">
+            Valoriser les personnes avec des repères partagés, ancrés dans des preuves d'usage,
+            pour permettre à chacun d'exister professionnellement à travers ce qu'il fait et l'afficher.
+          </p>
+          <a class="btn-primary domain-more" href="fonction-reconnaissance.html">En savoir plus</a>
+        </article>
+
+        <!-- 4. Innovation pédagogique -->
+        <article class="domain-card">
+          <figure class="domain-figure">
+            <img src="assets/39.png" alt="Innovation pédagogique" />
+          </figure>
+          <h3 class="domain-title">Innovation pédagogique</h3>
+          <p class="domain-text">
+            Développer les compétences par de nouvelles pratiques telles que temporalités d'apprentissage,
+            formes hybrides, usage de l'IA, accompagnement pour construire des parcours mieux adaptés.
+          </p>
+          <a class="btn-primary domain-more" href="innovation-pedagogique.html">En savoir plus</a>
+        </article>
+
+        <!-- 5. Nouvelles pratiques managériales -->
+        <article class="domain-card">
+          <figure class="domain-figure">
+            <img src="assets/38.png" alt="Nouvelles pratiques managériales" />
+          </figure>
+          <h3 class="domain-title">Nouvelles pratiques managériales</h3>
+          <p class="domain-text">
+            Mettre en place des modèles de "cross-management", de "servant-leadership", de travail en communautés
+            pour développer l'autonomie et de nouvelles performances individuelles et collectives.
+          </p>
+          <a class="btn-primary domain-more" href="management-innovant.html">En savoir plus</a>
+        </article>
+
+        <!-- 6. Entreprise apprenante -->
+        <article class="domain-card">
+          <figure class="domain-figure">
+            <img src="assets/37.png" alt="Entreprise apprenante" />
+          </figure>
+          <h3 class="domain-title">Entreprise apprenante</h3>
+          <p class="domain-text">
+            Les environnements apprenants : espaces où OPTIQ, l'innovation pédagogique,
+            les processus ouverts de reconnaissance et la valorisation du capital humain
+            se conjuguent pour transformer en continu les compétences et les pratiques.
+          </p>
+          <a class="btn-primary domain-more" href="organisation-apprenante.html">En savoir plus</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Mega-footer bleu (identique à about.html) ===== -->
+  <footer class="mega-footer">
+    <div class="container px-4">
+    <div class="mega-top">
+      <h3>Envie d'innover, de Reconnaître,<br/>d'être reconnu&nbsp;?</h3>
+
+      <div class="mega-actions">
+        <a href="contact.html" class="cta-outline cta-white">Faisons le</a>
+
+        <!-- Réseaux -->
+        <nav class="mega-social" aria-label="AFDEC sur les réseaux">
+          <a
+            href="https://fr.linkedin.com/in/hubertgrandjean"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn – Hubert Grandjean"
+            title="LinkedIn – Hubert Grandjean"
+          >
+            <!-- Icône LinkedIn blanche, en SVG inline -->
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path fill="currentColor"
+                d="M20.45 3H3.55A1.55 1.55 0 0 0 2 4.55v16.9C2 22.4 2.6 23 3.55 23h16.9A1.55 1.55 0 0 0 22 21.45V4.55A1.55 1.55 0 0 0 20.45 3Zm-11 16H6.1V10h3.35v9Zm-1.68-10.3a1.94 1.94 0 1 1 0-3.88 1.94 1.94 0 0 1 0 3.88ZM21 19h-3.34v-4.73c0-1.13-.02-2.6-1.58-2.6-1.58 0-1.82 1.23-1.82 2.52V19h-3.33V10h3.2v1.23h.05c.45-.86 1.56-1.76 3.2-1.76 3.42 0 4.06 2.25 4.06 5.17V19Z"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+
+      <hr class="mega-sep"/>
+
+      <div class="mega-grid">
+        <div>
+          <img src="assets/17.png" alt="AFDEC" class="mega-logo" />
+          <p class="mega-baseline">
+            L'innovation au service des<br/>
+            compétences et des performances des<br/>
+            organisations
+          </p>
+        </div>
+
+        <div>
+          <p class="mega-title">Organisation</p>
+          <nav class="mega-links">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">A propos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="mega-title">Domaines</p>
+          <nav class="mega-links">
+            <a href="optiq.html">Méthode OPTIQ(c)</a>
+            <a href="capital-humain.html">Capital Humain et Immatériel</a>
+            <a href="fonction-reconnaissance.html">Processus ouverts de reconnaissance</a>
+            <a href="innovation-pedagogique.html">Innovation pédagogique</a>
+            <a href="management-innovant.html">Nouvelles pratiques managériales</a>
+            <a href="organisation-apprenante.html">Organisation Apprenante</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

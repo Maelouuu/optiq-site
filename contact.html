@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AFDEC – Contact</title>
+  <meta name="description" content="Contactez l'AFDEC pour parler de votre projet." />
+
+  <!-- Tailwind déjà utilisé partout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css" />
+  <script defer src="assets/app.js"></script>
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+
+<body class="text-gray-800 bg-white">
+
+  <!-- Header overlay -->
+  <header class="header-hero">
+    <div class="container flex items-center justify-between py-4 header-inner">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/28.png" alt="AFDEC" class="hero-logo w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+        <a class="nav-hero" href="index.html">Accueil</a>
+        <a class="nav-hero" href="about.html">A propos</a>
+        <a class="nav-hero" href="domaines.html">Domaines</a>
+        <a class="nav-hero" href="faq.html">FAQ</a>
+        <a class="btn-cta" href="contact.html">Contact</a>
+      </nav>
+
+      <button class="md:hidden p-2" data-menu-toggle aria-label="Menu">
+        <img src="assets/1.png" alt="menu" class="h-6 w-6 invert" />
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav class="mobile-menu" data-menu>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">A propos</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn-cta w-fit" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO — image 56.png, hauteur réduite (hero--short) -->
+  <section class="relative overflow-hidden hero hero--short">
+    <div class="parallax-wrap">
+      <img src="assets/56.png" alt="Nous contacter" class="parallax-media" data-parallax data-speed="0.25" />
+    </div>
+    <div class="hero-scrim"></div>
+
+    <div class="absolute inset-0 flex items-end">
+      <div class="container px-4 pb-10">
+        <h1 class="hero-title text-white text-4xl md:text-6xl font-semibold text-center drop-shadow">
+          Contact
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : liseré + titre + formulaire -->
+  <section class="contact-wrap">
+    <div class="wrap-narrow px-4">
+      <p class="lead-in">Nous contacter</p>
+      <h2 class="section-title mt-3">Pour parler de votre projet</h2>
+
+      <div class="contact-card">
+        <!--
+          Envoi : GitHub Pages n'ayant pas de backend, on passe par FormSubmit.
+          Remplace TON_EMAIL par l'adresse destinataire (ex: contact@afdec.fr).
+          Si tu préfères un provider différent (Formspree, EmailJS), je peux adapter.
+        -->
+        <form id="contactForm"
+              class="contact-form"
+              action="https://formsubmit.co/TON_EMAIL"
+              method="POST">
+          <!-- Anti-spam/bots & options FormSubmit -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_subject" value="Nouveau message via le site AFDEC">
+          <input type="hidden" name="_next" value="contact.html#sent-ok">
+
+          <div class="contact-row">
+            <input class="input" type="text" name="name" placeholder="Votre nom" required>
+            <input class="input" type="email" name="email" placeholder="Votre email" required>
+          </div>
+
+          <textarea class="textarea" name="message" placeholder="A quel sujet pouvons nous échanger ?" required></textarea>
+
+          <button class="btn-send" type="submit">Envoyer</button>
+
+          <div id="formNoteOK" class="form-note ok">Merci ! Votre message a bien été envoyé.</div>
+          <div id="formNoteKO" class="form-note ko">Oups… envoi impossible pour le moment. Réessayez dans un instant.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER bleu -->
+  <footer class="mega-footer">
+    <div class="container px-4">
+
+      <!-- Ligne 1 : Titre + CTA + LinkedIn -->
+      <div class="mega-top">
+        <h3>Envie d'innover, de Reconnaître,<br/>d'être reconnu&nbsp;?</h3>
+
+        <div class="mega-actions">
+          <a href="contact.html" class="cta-outline cta-white">Faisons le</a>
+
+          <nav class="mega-social" aria-label="AFDEC sur les réseaux">
+            <a
+              href="https://fr.linkedin.com/in/hubertgrandjean"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn – Hubert Grandjean" title="LinkedIn – Hubert Grandjean">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M20.45 3H3.55A1.55 1.55 0 0 0 2 4.55v16.9C2 22.4 2.6 23 3.55 23h16.9A1.55 1.55 0 0 0 22 21.45V4.55A1.55 1.55 0 0 0 20.45 3Zm-11 16H6.1V10h3.35v9Zm-1.68-10.3a1.94 1.94 0 1 1 0-3.88 1.94 1.94 0 0 1 0 3.88ZM21 19h-3.34v-4.73c0-1.13-.02-2.6-1.58-2.6-1.58 0-1.82 1.23-1.82 2.52V19h-3.33V10h3.2v1.23h.05c.45-.86 1.56-1.76 3.2-1.76 3.42 0 4.06 2.25 4.06 5.17V19Z"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <hr class="mega-sep"/>
+
+      <!-- Ligne 2 : 3 colonnes -->
+      <div class="mega-grid">
+        <!-- Col 1 -->
+        <div>
+          <img src="assets/28.png" alt="AFDEC" class="mega-logo" />
+          <p class="mega-baseline">
+            L'innovation au service des<br/>
+            compétences et des performances des<br/>
+            organisations
+          </p>
+        </div>
+
+        <!-- Col 2 : Organisation -->
+        <div>
+          <p class="mega-title">Organisation</p>
+          <nav class="mega-links">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">A propos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </nav>
+        </div>
+
+        <!-- Col 3 : Domaines -->
+        <div>
+          <p class="mega-title">Domaines</p>
+          <nav class="mega-links">
+            <a href="methode-optiq.html">Méthode OPTIQ(c)</a>
+            <a href="capital-humain.html">Capital Humain et Immatériel</a>
+            <a href="fonction-reconnaissance.html">Processus ouverts de reconnaissance</a>
+            <a href="innovation-pedagogique.html">Innovation pédagogique</a>
+            <a href="management-innovant.html">Nouvelles pratiques managériales</a>
+            <a href="organisation-apprenante.html">Organisation Apprenante</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS léger pour un envoi AJAX + feedback sans rechargement -->
+  <script>
+    (function(){
+      const form = document.getElementById('contactForm');
+      const ok = document.getElementById('formNoteOK');
+      const ko = document.getElementById('formNoteKO');
+
+      // Remplacer TON_EMAIL si l'oubli bloque l’envoi
+      const needsEmail = form.action.includes('TON_EMAIL');
+
+      form.addEventListener('submit', async (e) => {
+        if (needsEmail) { return; } // Laisse faire le POST classique pour afficher l’erreur FormSubmit
+        e.preventDefault();
+        ok.classList.remove('show'); ko.classList.remove('show');
+
+        try{
+          const fd = new FormData(form);
+          const res = await fetch(form.action, { method:'POST', body: fd, headers:{ 'Accept':'application/json' }});
+          if(res.ok){
+            ok.classList.add('show');
+            form.reset();
+          }else{
+            ko.classList.add('show');
+          }
+        }catch(err){
+          ko.classList.add('show');
+        }
+      });
+
+      // Affiche le message OK si on revient avec l’ancre #sent-ok
+      if (location.hash === '#sent-ok'){ ok.classList.add('show'); }
+    })();
+  </script>
+</body>
+</html>

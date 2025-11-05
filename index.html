@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AFDEC – Laboratoire indépendant</title>
+  <meta name="description" content="Laboratoire indépendant de recherche appliquée sur le développement des compétences et la transformation des organisations." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="assets/app.js"></script>
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body class="text-gray-800 bg-white">
+
+  <!-- Header overlay -->
+  <header class="header-hero">
+    <div class="container header-inner flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/17.png" alt="AFDEC" class="hero-logo h-[120px] md:h-[140px] w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+        <a class="nav-hero" href="index.html">Accueil</a>
+        <a class="nav-hero" href="about.html">A propos</a>
+        <a class="nav-hero" href="domaines.html">Domaines</a>
+        <a class="nav-hero" href="faq.html">FAQ</a>
+        <a class="btn-cta" href="contact.html">Contact</a>
+      </nav>
+
+      <button class="md:hidden p-2" data-menu-toggle aria-label="Menu">
+        <img src="assets/1.png" alt="menu" class="h-6 w-6 invert" />
+      </button>
+    </div>
+
+    <!-- Menu mobile -->
+    <nav class="mobile-menu" data-menu>
+      <a href="index.html">Accueil</a>
+      <a href="about.html">A propos</a>
+      <a href="domaines.html">Domaines</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn-cta w-fit" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="parallax-wrap">
+      <img src="assets/22.png" alt="Consulting" class="parallax-media" data-parallax data-speed="0.25" />
+    </div>
+    <div class="hero-scrim"></div>
+
+    <div class="absolute inset-0 flex items-center">
+      <div class="container px-4">
+        <div class="hero-copy wide" data-animate="fade">
+          <h1 class="hero-title drop-shadow">
+            Laboratoire indépendant de recherche appliquée sur le développement des
+            compétences et la transformation des organisations
+          </h1>
+          <p class="hero-lead drop-shadow">
+            Modéliser, expérimenter, et diffuser les pratiques les plus efficaces en matière de capital humain,
+            d’organisation apprenante et de reconnaissance des compétences et des personnes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre vocation + 3 cartes -->
+  <section class="py-16">
+    <div class="container px-4">
+      <p class="lead-in" data-animate="up">Une recherche orientée terrain, pour transformer durablement</p>
+
+      <h2 class="section-title mt-3" data-animate="up">Notre vocation</h2>
+      <p class="mt-3 text-gray-700 max-w-4xl" data-animate="up" style="--delay:80ms">
+        AFDEC est une association de recherche appliquée engagée depuis plus de 25 ans dans l’exploration et la diffusion
+        de solutions concrètes pour le développement des compétences, la reconnaissance, et la transformation des organisations.
+        <br/>
+        <span class="font-medium italic">Nos travaux sont rigoureux, testés en conditions réelles avec des partenaires publics et privés.</span>
+      </p>
+
+      <div class="feature-grid mt-8">
+        <a href="une-approche-unique.html" class="feature-card big">
+          <img src="assets/14.png" alt="Une approche unique" class="feature-img feature-img-big" />
+          <div class="feature-overlay"></div>
+          <div class="feature-caption">
+            <h3>Une approche unique</h3>
+            <p class="feature-sub">Co-construction, expérimentation directe, capitalisation collective.</p>
+          </div>
+          <div class="feature-reveal">
+            <p>Ni cabinet de conseil, ni laboratoire académique : une place à part dans l’écosystème de la transformation des compétences.</p>
+            <span class="arrow">➜</span>
+          </div>
+        </a>
+
+        <a href="nos-valeurs.html" class="feature-card">
+          <img src="assets/20.png" alt="Nos valeurs" class="feature-img object-cover" />
+          <div class="feature-overlay"></div>
+          <div class="feature-caption">
+            <h3>Nos valeurs</h3>
+            <p class="feature-sub">Partage de méthodes, ouverture des modèles, sponsors innovants.</p>
+          </div>
+          <div class="feature-reveal">
+            <p>Transparence, exigence, utilité : des modèles transférables, éprouvés sur le terrain.</p>
+            <span class="arrow">➜</span>
+          </div>
+        </a>
+
+        <a href="methode-optiq.html" class="feature-card">
+          <img src="assets/18.png" alt="La méthode OPTIQ©" class="feature-img object-cover" />
+          <div class="feature-overlay"></div>
+          <div class="feature-caption">
+            <h3>La méthode OPTIQ©</h3>
+            <p class="feature-sub">Cartographier l’existant, agir sur les compétences, les flux et les rôles.</p>
+          </div>
+          <div class="feature-reveal">
+            <p>Visualiser l’organisation telle qu’elle est, puis guider les transformations concrètes.</p>
+            <span class="arrow">➜</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bandeau bleu CTA -->
+  <section class="cta-band">
+    <div class="container px-4">
+      <div class="cta-band-inner">
+        <h3>Un projet d'organisation original ?</h3>
+        <a class="cta-outline" href="contact.html">Proposez-le nous</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image-gauche / texte-droite -->
+  <section class="py-16">
+    <div class="container-narrow px-8 grid md:grid-cols-2 gap-20 items-center">
+      <div>
+        <img src="assets/12.png" alt="Réunion / collaboration" class="rounded-2xl border w-full h-[520px] object-cover" />
+      </div>
+      <div>
+        <p class="lead-in">Une approche unique</p>
+        <h3 class="mt-4 text-3xl md:text-4xl font-semibold">Ni cabinet de conseil, ni laboratoire académique</h3>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Nous occupons une place à part dans l’écosystème de la transformation des compétences. Notre approche se
+          fonde sur la co-construction, l’expérimentation directe, et la capitalisation collective.
+        </p>
+        <p class="mt-4 text-gray-700 leading-relaxed">
+          Nous ne bénéficions pas de subvention et nos travaux sont financés grâce aux partenariats et aux sponsoring que
+          nous établissons avec des organisations innovantes et en recherche continue de performances. Nos méthodes sont
+          ouvertes, nos modèles sont partagés.
+        </p>
+
+        <div class="mt-6 flex items-center gap-3">
+          <span class="check-icon" aria-hidden="true"></span>
+          <span class="font-medium">Les organisations innovantes sont nos sponsors</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Histoire + bouton -->
+  <section class="history-hero">
+    <img src="assets/32.png" class="history-img" alt="Notre histoire" />
+    <div class="history-overlay"></div>
+    <a href="about.html#histoire" class="history-btn">Lire notre Histoire</a>
+  </section>
+
+  <!-- Bandeau bleu : 4 cards avec modals -->
+  <section class="board-wrap">
+    <div class="container px-4">
+      <div class="board-grid">
+        <button class="board-card" type="button" data-open-modal="rigueur">
+          <span class="board-num">01.</span>
+          <h4 class="board-title">Rigueur</h4>
+          <p class="board-text">Des standards méthodologiques, respectant les normes, basés sur nos outils validés.</p>
+        </button>
+
+        <button class="board-card" type="button" data-open-modal="souplesse">
+          <span class="board-num">02.</span>
+          <h4 class="board-title">Souplesse</h4>
+          <p class="board-text">L’expérimentation terrain, dans des contextes réels, parfois contraints, toujours complexes.</p>
+        </button>
+
+        <button class="board-card" type="button" data-open-modal="implementation">
+          <span class="board-num">03.</span>
+          <h4 class="board-title">Implementation</h4>
+          <p class="board-text">Co-construction avec les acteurs opérationnels, à chaque étape.</p>
+        </button>
+
+        <button class="board-card" type="button" data-open-modal="modelisation">
+          <span class="board-num">04.</span>
+          <h4 class="board-title">Modélisation</h4>
+          <p class="board-text">Création / amélioration des modèles et organisation de la transférabilités.</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= NOUVELLE SECTION : Pourquoi partager… ======= -->
+  <section class="why-wrap">
+    <div class="container px-4">
+      <p class="lead-in text-center">Pourquoi partager un projet avec nous</p>
+
+      <h2 class="why-title">
+        Bénéficier des outils les plus performants et contribuer à
+        l'amélioration continue de l'organisation citoyenne
+      </h2>
+
+      <div class="why-grid">
+        <!-- Item 1 -->
+        <div class="why-item">
+          <a class="icon-box" href="methode-optiq.html" aria-label="Notre méthode">
+            <!-- icône : coffret -->
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="7" width="18" height="13" rx="2"></rect>
+              <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </a>
+          <div class="why-texts">
+            <h4>Performance</h4>
+            <p>Améliorer rapidement les performances de l'organisation et innover dans ses process et le pilotage de la qualité.</p>
+            <a class="link-blue" href="methode-optiq.html">Notre méthode <span>→</span></a>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="why-item">
+          <a class="icon-box" href="management-innovant.html" aria-label="Principes management innovant">
+            <!-- icône : bulle / discussion -->
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"></path>
+            </svg>
+          </a>
+          <div class="why-texts">
+            <h4>Approche collaborative</h4>
+            <p>Développer les compétences individuelles et collectives et favoriser le développement du Capital Humain.</p>
+            <a class="link-blue" href="management-innovant.html">Principes <span>→</span></a>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="why-item">
+          <a class="icon-box" href="fonction-reconnaissance.html" aria-label="Nouvelle approche reconnaissance">
+            <!-- icône : badge -->
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 17l-5.5 3 1.5-6.1L3 9l6.3-.5L12 3l2.7 5.5L21 9l-5 4.9L17.5 20z"></path>
+            </svg>
+          </a>
+          <div class="why-texts">
+            <h4>Reconnaître</h4>
+            <p>Déployer une fonction reconnaissance et favoriser l'implication en valorisant chacun.</p>
+            <a class="link-blue" href="fonction-reconnaissance.html">Nouvelle approche <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ======= /fin nouvelle section ======= -->
+
+  <!-- CTA bas -->
+  
+
+  <!-- Modals (déjà implémentés plus haut dans ton fichier) -->
+  <div class="modal-backdrop" data-modal id="modal-rigueur" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="rigueur-title">
+      <button class="modal-close" data-close-modal aria-label="Fermer">×</button>
+      <h3 id="rigueur-title" class="modal-title">Rigueur</h3>
+      <div class="modal-body">
+        <p><strong>Méthodes reproductibles</strong> testées dans <strong>200+ organisations / 10+ pays</strong>. Dès le début du projet l'organisation bénéficiaire dispose des modèles déjà fiabilisés créant des gains immédiats.</p>
+        <ul>
+          <li><strong>Cartographie en 3–4 jours</strong> du fonctionnement réel avec OPTIQ (langage partagé).</li>
+          <li>Exigences constantes : <strong>lisibilité, simplicité d’appropriation, utilité et transmissibilité</strong>.</li>
+          <li>Cadres <strong>documentés</strong> respectant des normes (ISO 9001, 10015, 14001 ; NF X50-124, X50-759, ISO 21000…).</li>
+          <li>Phases d'expérimentation <strong>documentées</strong> et microexpériences avant extension.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" data-modal id="modal-souplesse" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="souplesse-title">
+      <button class="modal-close" data-close-modal aria-label="Fermer">×</button>
+      <h3 id="souplesse-title" class="modal-title">Souplesse</h3>
+      <div class="modal-body">
+        <p>Outils modélisés mais adaptables à tout environnement, dans un respect pluriculturel.</p>
+        <ul>
+          <li>Prise en compte de la <strong>culture de l'organisation</strong> et de son projet stratégique.</li>
+          <li>Démarche <strong>recherche-action</strong> : essais, ajustements, capitalisation.</li>
+          <li>Travail <strong>participatif</strong> favorisant l’appropriation.</li>
+          <li>Objectif : <strong>réduire rapidement l’écart</strong> entre théorie et opérationnel.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" data-modal id="modal-implementation" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="impl-title">
+      <button class="modal-close" data-close-modal aria-label="Fermer">×</button>
+      <h3 id="impl-title" class="modal-title">Implementation</h3>
+      <div class="modal-body">
+        <p><strong>Adapter, imaginer, innover</strong> en sécurisant les approches.</p>
+        <ul>
+          <li>Clarifier <strong>rôles et flux</strong>, construire un <strong>langage commun</strong>.</li>
+          <li><strong>Redonner de la capacité d’action</strong> aux équipes.</li>
+          <li>Livrables : <strong>référentiels d’activités</strong>, systèmes de <strong>reconnaissance</strong>, évolutions <strong>qualité / SI</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" data-modal id="modal-modelisation" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="model-title">
+      <button class="modal-close" data-close-modal aria-label="Fermer">×</button>
+      <h3 id="model-title" class="modal-title">Modélisation</h3>
+      <div class="modal-body">
+        <p>Produire des <strong>modèles transférables</strong> fondés sur la <strong>preuve d’usage</strong>.</p>
+        <ul>
+          <li>Mettre en valeur les organisations <strong>qui osent la différence</strong>.</li>
+          <li>Montrer qu’on peut <strong>manager différemment le capital immatériel</strong>.</li>
+          <li>Diffuser les bonnes pratiques et <strong>élargir l’accès</strong>.</li>
+          <li>Faire <strong>évoluer</strong> référentiels, pratiques et normes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Mega-footer bleu ===== -->
+  <footer class="mega-footer">
+    <div class="container px-4">
+
+      <!-- Ligne 1 : Titre + CTA -->
+      <div class="mega-top">
+        <h3>Envie d'innover, de Reconnaître,<br/>d'être reconnu&nbsp;?</h3>
+
+        <div class="mega-actions">
+          <a href="contact.html" class="cta-outline cta-white">Faisons le</a>
+
+          <!-- Réseaux -->
+          <nav class="mega-social" aria-label="AFDEC sur les réseaux">
+            <a
+              href="https://fr.linkedin.com/in/hubertgrandjean"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn – Hubert Grandjean"
+              title="LinkedIn – Hubert Grandjean"
+            >
+              <!-- Icône LinkedIn blanche, en SVG inline -->
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor"
+                  d="M20.45 3H3.55A1.55 1.55 0 0 0 2 4.55v16.9C2 22.4 2.6 23 3.55 23h16.9A1.55 1.55 0 0 0 22 21.45V4.55A1.55 1.55 0 0 0 20.45 3Zm-11 16H6.1V10h3.35v9Zm-1.68-10.3a1.94 1.94 0 1 1 0-3.88 1.94 1.94 0 0 1 0 3.88ZM21 19h-3.34v-4.73c0-1.13-.02-2.6-1.58-2.6-1.58 0-1.82 1.23-1.82 2.52V19h-3.33V10h3.2v1.23h.05c.45-.86 1.56-1.76 3.2-1.76 3.42 0 4.06 2.25 4.06 5.17V19Z"/>
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+
+      <hr class="mega-sep"/>
+
+      <!-- Ligne 2 : 3 colonnes -->
+      <div class="mega-grid">
+        <!-- Col 1 : logo + baseline -->
+        <div>
+          <img src="assets/17.png" alt="AFDEC" class="mega-logo" />
+          <p class="mega-baseline">
+            L'innovation au service des<br/>
+            compétences et des performances des<br/>
+            organisations
+          </p>
+        </div>
+
+        <!-- Col 2 : Organisation -->
+        <div>
+          <p class="mega-title">Organisation</p>
+          <nav class="mega-links">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">A propos</a>
+            <a href="faq.html">FAQ</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+          </nav>
+        </div>
+
+        <!-- Col 3 : Domaines -->
+        <div>
+          <p class="mega-title">Domaines</p>
+          <nav class="mega-links">
+            <a href="methode-optiq.html">Méthode OPTIQ(c)</a>
+            <a href="capital-humain.html">Capital Humain et Immatériel</a>
+            <a href="fonction-reconnaissance.html">Processus ouverts de reconnaissance</a>
+            <a href="innovation-pedagogique.html">Innovation pédagogique</a>
+            <a href="management-innovant.html">Nouvelles pratiques managériales</a>
+            <a href="organisation-apprenante.html">Organisation Apprenante</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
