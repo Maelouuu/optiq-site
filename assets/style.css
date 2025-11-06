@@ -465,3 +465,67 @@ html,body{
   opacity:1;
   text-decoration:underline;
 }
+
+/* Inverse l'ordre sur mobile : l'image au-dessus du texte */
+@media (max-width:767px){
+  .page-about .about-duo{
+    display:grid; grid-template-columns:1fr; row-gap:24px;
+  }
+  .page-about .about-duo > :nth-child(1){ order:2; } /* texte */
+  .page-about .about-duo > :nth-child(2){ order:1; } /* image (34.png) */
+}
+
+@media (max-width:767px){
+  .page-domaines .wrap-narrow,
+  .page-domaines .container,
+  .page-domaines .container-narrow,
+  .page-domaines section{
+    padding-left:16px; padding-right:16px;
+  }
+}
+/* Icône devant le titre "Approche opérationnelle" */
+.section-title.mb-3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.1;
+}
+
+.section-title.mb-3::before {
+  content: "";
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  background: url('../assets/44.png') center/contain no-repeat;
+  flex: 0 0 56px;
+}
+
+/* Mobile : on remplace par 58.png et on compacte un peu */
+@media (max-width: 767px) {
+  .section-title.mb-3::before {
+    background-image: url('../assets/58.png');
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+}
+
+
+@media (max-width:767px){
+  .cta-outline.cta-white{
+    white-space:nowrap;           /* force une seule ligne */
+    font-size:14px;               /* légèrement plus petit */
+    padding:10px 14px;            /* bouton plus compact */
+  }
+}
+
+
+/* Hauteur unifiée pour tous les héros SAUF l'accueil */
+body:not(.page-home) .parallax-wrap{
+  height: 68vh !important;
+}
+@media (max-width: 767px){
+  body:not(.page-home) .parallax-wrap{
+    height: 58vh !important;
+  }
+}
