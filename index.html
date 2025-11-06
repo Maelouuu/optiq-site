@@ -28,7 +28,7 @@
       </nav>
 
       <button class="md:hidden p-2" data-menu-toggle aria-label="Menu">
-        <img src="assets/1.png" alt="menu" class="h-6 w-6 invert" />
+        <img src="assets/10.png" alt="menu" class="burger-icon" />
       </button>
     </div>
 
@@ -159,11 +159,19 @@
   </section>
 
   <!-- Image Histoire + bouton -->
-  <section class="history-hero">
-    <img src="assets/32.png" class="history-img" alt="Notre histoire" />
+<section class="history-hero">
+  <div class="relative w-full h-full">
+    <picture>
+      <source media="(max-width: 767px)" srcset="assets/57.png"> <!-- version mobile -->
+      <img src="assets/32.png" alt="AFDEC" class="history-img" />
+    </picture>
     <div class="history-overlay"></div>
+
+    <!-- Bouton Lire notre histoire -->
     <a href="about.html#histoire" class="history-btn">Lire notre Histoire</a>
-  </section>
+  </div>
+</section>
+
 
   <!-- Bandeau bleu : 4 cards avec modals -->
   <section class="board-wrap">

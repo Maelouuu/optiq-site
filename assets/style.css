@@ -39,7 +39,7 @@ html,body{
 
 /* Logo header — même rendu partout (taille accueil) */
 .hero-logo{
-  height:150px !important;           /* uniforme (accueil) */
+  height:150px !important;
   width:auto !important;
   transform:none !important;
   margin-left:0 !important;
@@ -47,11 +47,72 @@ html,body{
   object-fit:contain;
 }
 
-/* ===== Menu mobile ===== */
-.mobile-menu{display:none;flex-direction:column;gap:.75rem;padding:1rem}
-@media (max-width: 767px){
-  [data-menu].open{display:flex;background:rgba(0,0,0,.8)}
-  [data-menu].open a{color:#fff}
+/* ===== Menu mobile — overlay plein écran, liens bleu translucide ===== */
+.mobile-menu{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 88px 20px 24px;
+  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,.72);
+  transform: translateY(-8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  z-index: 50;
+}
+@media (min-width: 768px){
+  .mobile-menu{ display:none; }
+}
+[data-menu].open{
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.mobile-menu a{
+  display:block;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:.2px;
+  padding:14px 16px;
+  border-radius:12px;
+  background: rgba(60, 120, 255, .16);  /* léger bleu translucide */
+  border:1px solid rgba(140, 180, 255, .28);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+.mobile-menu a + a{ margin-top:10px; }
+.mobile-menu a:hover{
+  background: rgba(60, 120, 255, .24);
+  border-color: rgba(160, 200, 255, .34);
+}
+
+/* ===== Bouton burger (utilise ton IMG 10.png) ===== */
+[data-menu-toggle]{
+  width: 75px;
+  height: 65px;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: none !important;   /* IMPORTANT: pas de background-image résiduel */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+}
+[data-menu-toggle]::before,
+[data-menu-toggle]::after{ content:none !important; }
+[data-menu-toggle] .burger-line,
+[data-menu-toggle] svg{ display:none !important; } /* tue l'ancien burger si présent */
+@media (min-width:768px){
+  [data-menu-toggle]{ display:none; }
+}
+/* image du burger (ton 10.png) */
+.burger-icon{
+  width: 75px;
+  height: 65px;
+  display: block;
 }
 
 /* ===== Boutons & liens ===== */
@@ -76,6 +137,12 @@ html,body{
 
 /* Centrage page À propos */
 .page-about .hero-copy{text-align:center}
+
+/* >>> Mobile: centrer tous les titres de héros (photo de prés) sans toucher desktop */
+@media (max-width:767px){
+  .hero-copy{ text-align:center; }
+  .hero-lead{ margin-inline:auto; }
+}
 
 /* ===== Lead-in bleu ===== */
 .lead-in{display:flex;align-items:center;gap:.75rem;color:var(--brand);font-weight:600}
@@ -105,6 +172,13 @@ html,body{
 .feature-card:hover .feature-overlay{opacity:.9}
 .arrow{position:absolute;right:-2px;bottom:2px;font-size:1.25rem}
 
+/* >>> Mobile: rendre “Une approche unique” visuellement identique aux deux autres cartes */
+@media (max-width:767px){
+  .feature-card.big{ min-height:unset; }
+  .feature-img-big{ height:auto; max-height:340px; transform:none; object-position:center; }
+  .feature-overlay{ opacity:1; }
+}
+
 /* ===== Bandeau bleu ===== */
 .cta-band{background:var(--brand);padding:68px 0;color:#fff}
 .cta-band-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
@@ -123,6 +197,15 @@ html,body{
 .history-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.25))}
 .history-btn{position:absolute;left:50%;transform:translateX(-50%);bottom:5rem;background:#2482e0;color:#fff;padding:.95rem 1.4rem;border-radius:999px;font-weight:600;box-shadow:0 10px 24px rgba(36,130,224,.35);transition:filter .2s ease}
 .history-btn:hover{filter:brightness(1.05)}
+/* Mobile : bouton en haut-droite */
+@media (max-width: 767px){
+  .history-btn{
+    top: 14px; right: 14px;
+    bottom: auto; left: auto;
+    transform: none;
+    padding: 10px 14px;
+  }
+}
 
 /* ===== Grand bandeau bleu 4 cards ===== */
 .board-wrap{background:#2482e0;padding:110px 0;color:#fff;margin-top:2rem}
@@ -165,7 +248,7 @@ html,body{
 .mega-sep{border:0;height:1px;background:rgba(255,255,255,.35);margin:22px 0 34px}
 .mega-grid{display:grid;grid-template-columns:1.1fr .7fr .9fr;gap:36px}
 @media (max-width:960px){.mega-grid{grid-template-columns:1fr;gap:22px}}
-.mega-logo{height:118px;width:auto;object-fit:contain;margin:8px 0 16px} /* ×1.5 */
+.mega-logo{height:118px;width:auto;object-fit:contain;margin:8px 0 16px}
 .mega-baseline{line-height:1.6;opacity:.95}
 .mega-title{font-weight:700;margin-bottom:10px}
 .mega-links{display:flex;flex-direction:column;gap:8px}
@@ -220,6 +303,12 @@ html,body{
 .about-duo img{display:block;width:100%;height:auto;border-radius:16px}
 @media (max-width:960px){.about-duo{grid-template-columns:1fr;row-gap:24px}}
 
+/* >>> Mobile: padding latéral doux sur À propos (image + bloc texte gris) */
+@media (max-width:767px){
+  .page-about .about-duo{ padding-inline:14px; }
+  .page-about .prose-block{ padding-inline:14px; }
+}
+
 /* ===== Domaines (cartes) ===== */
 .domain-grid{display:grid;gap:32px;grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:1100px){.domain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -248,12 +337,10 @@ html,body{
 @media (max-width:767px){.parallax-wrap.hero-short{height:58vh}}
 
 /* === Sous-pages Domaines — compact + lignes serrées + contenu allongé === */
-/* ① Texte “le plus allongé possible” : on élargit la zone de lecture sur les sous-pages */
-.page-domaines .wrap-narrow{ max-width: calc(100vw - 48px); }           /* quasi pleine largeur */
+.page-domaines .wrap-narrow{ max-width: calc(100vw - 48px); }
 @media (min-width:1280px){
   .page-domaines .wrap-narrow{ max-width: calc(100vw - 72px); }
 }
-/* ② Lignes/espaces compacts dans les blocs de texte */
 .page-domaines .prose-block p,
 .page-domaines .prose-block ul,
 .page-domaines .prose-block li {
@@ -264,13 +351,12 @@ html,body{
   margin-top: 12px !important;
   margin-bottom: 6px !important;
 }
-/* ③ Réduction espacement global entre sections */
 .page-domaines section{ margin-bottom: 24px !important; }
 
 /* ④ Image “Constats initiaux” — taille uniforme */
 .img-constats{
   width:100%;
-  max-height:240px;        /* taille fixe homogène */
+  max-height:240px;
   object-fit:cover;
   border-radius:12px;
   display:block;
@@ -290,19 +376,28 @@ html,body{
   width:auto;
   max-height:200px;
   object-fit:contain;
-  margin-left:0 !important;      /* collé à gauche */
+  margin-left:0 !important;
   margin-right:auto !important;
 }
 
 /* ⑦ Résultats : rapprocher le texte de l’image (réduction du gap de grille) */
 .page-domaines .gains .grid,
 .page-domaines #gains .grid{
-  column-gap:14px !important;    /* texte plus près de l’image */
+  column-gap:14px !important;
   row-gap:12px !important;
 }
 
+/* >>> Mobile: padding latéral doux pour toutes les sous-pages Domaines */
+@media (max-width:767px){
+  .page-domaines .wrap-narrow,
+  .page-domaines .container,
+  .page-domaines .container-narrow{
+    padding-inline:14px;
+  }
+}
+
 /* ===== FAQ ===== */
-.hero.hero--short .parallax-wrap{height:58vh}  /* (déjà géré ci-dessus pour mobile) */
+.hero.hero--short .parallax-wrap{height:58vh}
 
 .faq-accordion{display:grid;gap:14px}
 .acc-item{background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 8px 18px rgba(0,0,0,.05);overflow:hidden;transition:box-shadow .2s ease}
@@ -312,7 +407,6 @@ html,body{
 .acc-caret{transform:rotate(0deg);transition:transform .18s ease;font-weight:700}
 .acc-item.open .acc-caret{transform:rotate(180deg)}
 .acc-panel{max-height:0;opacity:0;overflow:hidden;transition:max-height .45s cubic-bezier(.25,.1,.25,1),opacity .3s ease;position:relative}
-/* flou/masque quand fermé (évite la 1ère ligne visible) */
 .acc-panel::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,1) 60%,rgba(255,255,255,0));filter:blur(6px);opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:1}
 .acc-item.open .acc-panel{max-height:600px;opacity:1}
 .acc-item:not(.open) .acc-panel::before{opacity:1}
@@ -357,8 +451,7 @@ html,body{
 @media (max-width:767px){ .hero.hero--short .parallax-wrap{ height:52vh; } }
 
 /* === Menu légèrement décalé à gauche — cohérent Accueil → partout === */
-.header-inner{ padding-right:28px; }  /* conservé */
-
+.header-inner{ padding-right:28px; }
 
 /* ===== Mentions — lien footer ===== */
 .mentions-link{

@@ -165,3 +165,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+const menu = document.querySelector('[data-menu]');
+const toggleBtn = document.querySelector('[data-menu-toggle]');
+
+function closeMenu(){
+  menu.classList.remove('open');
+  toggleBtn?.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+// 1) clic sur le “fond” de l’overlay (en dehors des boutons) → fermer
+menu.addEventListener('click', (e) => {
+  if (e.target === menu) {   // on a cliqué sur l’overlay lui-même
+    closeMenu();
+  }
+});
+
+// 2) par sécurité : touche Échap déjà gérée ? sinon :
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+});
+
+// 3) si tu n’as pas déjà ça : fermer au clic sur un lien du menu
+menu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => closeMenu());
+});
