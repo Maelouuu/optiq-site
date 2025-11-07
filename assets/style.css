@@ -409,7 +409,6 @@ html,body{
 .acc-panel{max-height:0;opacity:0;overflow:hidden;transition:max-height .45s cubic-bezier(.25,.1,.25,1),opacity .3s ease;position:relative}
 .acc-panel::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,1) 60%,rgba(255,255,255,0));filter:blur(6px);opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:1}
 .acc-item.open .acc-panel{max-height:600px;opacity:1}
-.acc-item:not(.open) .acc-panel::before{opacity:1}
 .acc-panel p{position:relative;z-index:2;padding:14px 20px 20px;color:#374151;line-height:1.6}
 
 /* ===== Contact ===== */
@@ -483,42 +482,17 @@ html,body{
     padding-left:16px; padding-right:16px;
   }
 }
-/* Icône devant le titre "Approche opérationnelle" */
-.section-title.mb-3 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  line-height: 1.1;
-}
-
-.section-title.mb-3::before {
-  content: "";
-  display: inline-block;
-  width: 56px;
-  height: 56px;
-  background: url('../assets/44.png') center/contain no-repeat;
-  flex: 0 0 56px;
-}
-
-/* Mobile : on remplace par 58.png et on compacte un peu */
-@media (max-width: 767px) {
-  .section-title.mb-3::before {
-    background-image: url('../assets/58.png');
-    width: 48px;
-    height: 48px;
-    flex-basis: 48px;
-  }
-}
 
 
+
+/* CTA footer mobile : 1 seule ligne */
 @media (max-width:767px){
   .cta-outline.cta-white{
-    white-space:nowrap;           /* force une seule ligne */
-    font-size:14px;               /* légèrement plus petit */
-    padding:10px 14px;            /* bouton plus compact */
+    white-space:nowrap;
+    font-size:14px;
+    padding:10px 14px;
   }
 }
-
 
 /* Hauteur unifiée pour tous les héros SAUF l'accueil */
 body:not(.page-home) .parallax-wrap{
@@ -528,4 +502,80 @@ body:not(.page-home) .parallax-wrap{
   body:not(.page-home) .parallax-wrap{
     height: 58vh !important;
   }
+}
+
+/* === Correction : pas de padding sur les images de prés en mobile === */
+@media (max-width:767px){
+  /* supprime le padding latéral sur les sections hero (image de présentation) */
+  .hero,
+  .parallax-wrap,
+  section.hero-title-up,
+  .page-domaines .parallax-wrap,
+  .page-about .parallax-wrap {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* supprime aussi le fond gris sur les côtés (si appliqué via container) */
+  .parallax-wrap img,
+  .parallax-media {
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:cover;
+  }
+}
+
+/* === HERO mobile : pas de bandes grises === */
+@media (max-width:767px){
+  /* Sous-pages (pas la home) → hero moins haut */
+  body:not(.page-home) .parallax-wrap{
+    height: 46vh !important;   /* au lieu de 58vh */
+  }
+  /* L'image de fond occupe 100% du hero */
+  .parallax-media{
+    height: 100% !important;   /* pas 120% en mobile */
+    object-fit: cover;
+  }
+  /* Aucune marge/padding sur le hero */
+  .parallax-wrap,
+  section.hero-title-up {
+    padding-left:0 !important;
+    padding-right:0 !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+}
+
+
+/* --- Approche opérationnelle : mobile, icône à gauche + titre sur 2 lignes --- */
+@media (max-width: 767px){
+  /* Masque 44.png dans la figure de droite (cette section seulement) */
+  .edge-right .img-approche-44{
+    display: none !important;
+  }
+
+  /* Icône 58.png seulement devant CE titre */
+  .approche-h2{
+    display: grid;
+    grid-template-columns: 56px 1fr; /* colonne icône + colonne texte */
+    align-items: center;
+    column-gap: 12px;
+    line-height: 1.15;
+    margin-bottom: .75rem;   /* équivalent de mb-3 */
+    white-space: normal;     /* le texte peut passer sur 2 lignes */
+  }
+  .approche-h2::before{
+    content:"";
+    width:56px; height:56px;
+    background: url('../assets/58.png') center/contain no-repeat;
+  }
+}
+
+/* iPhone / très étroit : icône un peu plus petite pour éviter tout saut */
+@media (max-width: 390px){
+  .approche-h2{ grid-template-columns: 50px 1fr; }
+  .approche-h2::before{ width:50px; height:50px; }
 }
