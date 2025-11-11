@@ -74,32 +74,22 @@
       <h2 class="section-title mt-3">Pour parler de votre projet</h2>
 
       <div class="contact-card">
-        <!--
-          Envoi : GitHub Pages n'ayant pas de backend, on passe par FormSubmit.
-          Remplace TON_EMAIL par l'adresse destinataire (ex: contact@afdec.fr).
-          Si tu préfères un provider différent (Formspree, EmailJS), je peux adapter.
-        -->
-        <form id="contactForm"
-              class="contact-form"
-              action="https://formsubmit.co/TON_EMAIL"
-              method="POST">
-          <!-- Anti-spam/bots & options FormSubmit -->
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_subject" value="Nouveau message via le site AFDEC">
-          <input type="hidden" name="_next" value="contact.html#sent-ok">
+        <!-- Envoi via Web3Forms -->
+        <form id="contactForm" class="contact-form" action="#" method="POST" novalidate>
+          <!-- Anti-bot -->
+          <input type="text" name="bot_field" id="bot_field" style="display:none">
 
           <div class="contact-row">
-            <input class="input" type="text" name="name" placeholder="Votre nom" required>
-            <input class="input" type="email" name="email" placeholder="Votre email" required>
+            <input class="input" id="field-name" type="text" name="name" placeholder="Votre nom" required>
+            <input class="input" id="field-email" type="email" name="email" placeholder="Votre email" required>
           </div>
 
-          <textarea class="textarea" name="message" placeholder="A quel sujet pouvons nous échanger ?" required></textarea>
+          <textarea class="textarea" id="field-message" name="message" placeholder="À quel sujet pouvons-nous échanger ?" required></textarea>
 
           <button class="btn-send" type="submit">Envoyer</button>
 
           <div id="formNoteOK" class="form-note ok">Merci ! Votre message a bien été envoyé.</div>
-          <div id="formNoteKO" class="form-note ko">Oups… envoi impossible pour le moment. Réessayez dans un instant.</div>
+          <div id="formNoteKO" class="form-note ko">Oups… envoi impossible pour le moment. Vous pouvez utiliser l’email de secours : <a id="mailtoLink" class="underline" href="#">ouvrir ma messagerie</a>.</div>
         </form>
       </div>
     </div>
@@ -171,37 +161,67 @@
     </div>
   </footer>
 
-  <!-- JS léger pour un envoi AJAX + feedback sans rechargement -->
+  <!-- JS : Web3Forms + fallback mailto -->
   <script>
-    (function(){
+    (function () {
+      const WEB3FORMS_KEY = "fb6efec6-c964-4f9e-aff7-2f701af8fe0b";       // clé Web3Forms AFDEC
+      const TO_EMAIL_FALLBACK = "h.grandjean@afdec.fr";                    // mail de secours
+
       const form = document.getElementById('contactForm');
       const ok = document.getElementById('formNoteOK');
       const ko = document.getElementById('formNoteKO');
+      const mailtoLink = document.getElementById('mailtoLink');
 
-      // Remplacer TON_EMAIL si l'oubli bloque l’envoi
-      const needsEmail = form.action.includes('TON_EMAIL');
+      function show(el){ el.classList.add('show'); }
+      function hide(el){ el.classList.remove('show'); }
+
+      function mailtoHref(name, email, message) {
+        const subject = encodeURIComponent("Nouveau message via le site AFDEC");
+        const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        return `mailto:${TO_EMAIL_FALLBACK}?subject=${subject}&body=${body}`;
+      }
 
       form.addEventListener('submit', async (e) => {
-        if (needsEmail) { return; } // Laisse faire le POST classique pour afficher l’erreur FormSubmit
         e.preventDefault();
-        ok.classList.remove('show'); ko.classList.remove('show');
+        hide(ok); hide(ko);
 
-        try{
-          const fd = new FormData(form);
-          const res = await fetch(form.action, { method:'POST', body: fd, headers:{ 'Accept':'application/json' }});
-          if(res.ok){
-            ok.classList.add('show');
+        const name = document.getElementById('field-name').value.trim();
+        const email = document.getElementById('field-email').value.trim();
+        const message = document.getElementById('field-message').value.trim();
+        const bot = (document.getElementById('bot_field').value || '').trim();
+
+        if (bot || !name || !email || !message) return;
+
+        try {
+          const payload = {
+            access_key: WEB3FORMS_KEY,
+            from_name: "AFDEC – Site web",
+            subject: "Nouveau message via le site AFDEC",
+            name, email, message
+          };
+
+          const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (res.ok) {
+            show(ok);
             form.reset();
-          }else{
-            ko.classList.add('show');
+          } else {
+            // Fallback mailto si l’API répond une erreur
+            mailtoLink.href = mailtoHref(name, email, message);
+            show(ko);
           }
-        }catch(err){
-          ko.classList.add('show');
+        } catch (err) {
+          // Fallback mailto si problème réseau
+          mailtoLink.href = mailtoHref(name, email, message);
+          show(ko);
         }
       });
 
-      // Affiche le message OK si on revient avec l’ancre #sent-ok
-      if (location.hash === '#sent-ok'){ ok.classList.add('show'); }
+      if (location.hash === '#sent-ok') { show(ok); }
     })();
   </script>
 </body>

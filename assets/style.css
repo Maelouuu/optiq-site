@@ -579,3 +579,8 @@ body:not(.page-home) .parallax-wrap{
   .approche-h2{ grid-template-columns: 50px 1fr; }
   .approche-h2::before{ width:50px; height:50px; }
 }
+
+@media (max-width: 767px){
+  .hero-title{ font-size: 27px; }
+  .hero-lead{ font-size: 13px; }
+}
